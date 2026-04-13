@@ -22,6 +22,8 @@ public class BookingSectionReport extends JFrame {
         this.setLocation(200, 200);
         this.setSize(1200, 820);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        Connect();
+        generateReport();
         this.setVisible(true);
     }
 
@@ -100,8 +102,8 @@ public class BookingSectionReport extends JFrame {
 
             int count = 0;
             while (rs.next()) {
-                report.append(String.format("%-10d %-20s %-20s %-15s%n",
-                    rs.getInt("managerId"),
+                report.append(String.format("%-10s %-20s %-20s %-15s%n",
+                    rs.getString("managerId"),
                     rs.getString("managerName"),
                     rs.getString("department"),
                     rs.getString("status")));

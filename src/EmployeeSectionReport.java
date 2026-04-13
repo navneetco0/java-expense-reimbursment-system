@@ -26,6 +26,7 @@ public class EmployeeSectionReport extends JFrame {
         this.setLocation(200, 200);
         this.setSize(1200, 820);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        generateReport();
         this.setVisible(true);
     }
 

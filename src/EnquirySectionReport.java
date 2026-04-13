@@ -22,6 +22,8 @@ public class EnquirySectionReport extends JFrame {
         this.setLocation(200, 200);
         this.setSize(1200, 820);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        Connect();
+        generateReport();
         this.setVisible(true);
     }
 
@@ -100,11 +102,11 @@ public class EnquirySectionReport extends JFrame {
 
             int count = 0;
             while (rs.next()) {
-                report.append(String.format("%-10d %-15d %-15.2f %-20s%n",
-                    rs.getInt("claimId"),
-                    rs.getInt("employeeId"),
-                    rs.getDouble("claimAmount"),
-                    rs.getString("claimstatus")));
+                report.append(String.format("%-10s %-15s %-15.2f %-20s%n",
+                    rs.getString("claimId"),
+                    rs.getString("employeeId"),
+                    rs.getDouble("amount"),
+                    rs.getString("status")));
                 count++;
             }
             report.append("\n").append("=".repeat(60)).append("\n");

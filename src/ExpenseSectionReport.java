@@ -22,6 +22,8 @@ public class ExpenseSectionReport extends JFrame {
         this.setLocation(200, 200);
         this.setSize(1200, 820);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        Connect();
+        generateReport();
         this.setVisible(true);
     }
 
@@ -100,8 +102,8 @@ public class ExpenseSectionReport extends JFrame {
 
             int count = 0;
             while (rs.next()) {
-                report.append(String.format("%-10d %-25s %-15s%n",
-                    rs.getInt("categoryId"),
+                report.append(String.format("%-10s %-25s %-15s%n",
+                    rs.getString("categoryId"),
                     rs.getString("categoryName"),
                     rs.getString("description")));
                 count++;

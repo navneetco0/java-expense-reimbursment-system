@@ -28,6 +28,8 @@ public class AccountSectionQuerry extends JFrame {
         this.setSize(1200, 650);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         Connect();
+        loadTable("SELECT * FROM account_detail", null);
+        jRadioButton1.setSelected(true);
         this.setVisible(true);
     }
 

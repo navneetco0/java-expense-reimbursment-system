@@ -28,6 +28,8 @@ public class EnquirySectionQuery extends JFrame {
         this.setSize(1200, 650);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         Connect();
+        loadTable("SELECT * FROM claim", null);
+        jRadioButton1.setSelected(true);
         this.setVisible(true);
     }
 
@@ -118,19 +120,19 @@ public class EnquirySectionQuery extends JFrame {
 
         jRadioButton1.addActionListener(e -> {
             if (jRadioButton1.isSelected())
-                loadTable("SELECT * FROM enquiry", null);
+                loadTable("SELECT * FROM claim", null);
         });
 
         jRadioButton3.addActionListener(e -> {
-            String st = JOptionPane.showInputDialog(this, "Enter Name to Fetch:");
+            String st = JOptionPane.showInputDialog(this, "Enter Employee Name to Fetch:");
             if (st != null && !st.isEmpty())
-                loadTable("SELECT * FROM enquiry WHERE employeename=?", st);
+                loadTable("SELECT * FROM claim WHERE employeename=?", st);
         });
 
         jRadioButton2.addActionListener(e -> {
-            String st = JOptionPane.showInputDialog(this, "Enter Enquiry Id to Fetch:");
+            String st = JOptionPane.showInputDialog(this, "Enter Claim Id to Fetch:");
             if (st != null && !st.isEmpty()) {
-                loadTable("SELECT * FROM enquiry WHERE enquiryid=?", st);
+                loadTable("SELECT * FROM claim WHERE claimId=?", st);
             } else {
                 JOptionPane.showMessageDialog(null, "Sorry Not found!! Please try another Record");
             }

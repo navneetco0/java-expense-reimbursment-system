@@ -22,6 +22,8 @@ public class DonerSectionReport extends JFrame {
         this.setLocation(200, 200);
         this.setSize(1200, 820);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        Connect();
+        generateReport();
         this.setVisible(true);
     }
 
@@ -95,16 +97,16 @@ public class DonerSectionReport extends JFrame {
             pst = con.prepareStatement(sql);
             rs = pst.executeQuery();
 
-            report.append(String.format("%-12s %-10s %-12s %-20s%n", "Approval ID", "Claim ID", "Manager ID", "Status"));
+            report.append(String.format("%-12s %-10s %-12s %-20s%n", "Approval ID", "Claim ID", "Approver ID", "Status"));
             report.append("=".repeat(54)).append("\n");
 
             int count = 0;
             while (rs.next()) {
-                report.append(String.format("%-12d %-10d %-12d %-20s%n",
-                    rs.getInt("approvalId"),
-                    rs.getInt("claimId"),
-                    rs.getInt("managerId"),
-                    rs.getString("approvalstatus")));
+                report.append(String.format("%-12s %-10s %-12s %-20s%n",
+                    rs.getString("approvalId"),
+                    rs.getString("claimId"),
+                    rs.getString("approverId"),
+                    rs.getString("status")));
                 count++;
             }
             report.append("\n").append("=".repeat(54)).append("\n");

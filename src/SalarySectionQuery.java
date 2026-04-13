@@ -26,6 +26,8 @@ public class SalarySectionQuery extends JFrame {
         this.setSize(1200, 650);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         Connect();
+        loadTable("SELECT * FROM approval", null);
+        jRadioButton3.setSelected(true);
         this.setVisible(true);
     }
 
