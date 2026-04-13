@@ -26,7 +26,7 @@ public class EnquirySectionQuery extends JFrame {
         // this.setJMenuBar(AppMenuBar.createMenu(this));
         this.setLocation(200, 200);
         this.setSize(1200, 650);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         Connect();
         this.setVisible(true);
     }

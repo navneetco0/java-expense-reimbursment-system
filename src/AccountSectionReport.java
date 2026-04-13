@@ -25,7 +25,7 @@ public class AccountSectionReport extends JFrame {
         // this.setJMenuBar(AppMenuBar.createMenu(this));
         this.setLocation(200, 200);
         this.setSize(1200, 820);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setVisible(true);
     }
 
